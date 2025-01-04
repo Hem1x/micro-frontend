@@ -19,4 +19,7 @@ export default defineConfig({
     target: 'esnext',
     assetsDir: '',
   },
+  preview: {
+    port: 5001,
+  },
 });

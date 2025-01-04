@@ -21,4 +21,7 @@ export default defineConfig({
     cssCodeSplit: false,
     assetsDir: '',
   },
+  preview: {
+    port: 5003,
+  },
 });

@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  shared-ui:
+    build:
+      context: ./ui
+    working_dir: /app
+    ports:
+      - '5003:5003'
+  remote-app:
+    build:
+      context: ./remote
+    working_dir: /app
+    ports:
+      - '5001:5001'
+    depends_on:
+      - shared-ui
+  host:
+    build:
+      context: ./host
+    working_dir: /app
+    ports:
+      - '5002:5002'
+    depends_on:
+      - remote-app
+      - shared-ui

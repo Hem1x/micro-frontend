@@ -9,13 +9,16 @@ export default defineConfig({
     ModuleFederationPlugin({
       name: 'host',
       remotes: {
-        remote: 'http://localhost:5000/remoteEntry.js',
-        ui: 'http://localhost:5001/remoteEntry.js',
+        remote: 'http://localhost:5001/remoteEntry.js',
+        ui: 'http://localhost:5003/remoteEntry.js',
       },
       shared: ['react', 'react-dom'],
     }),
   ],
   build: {
     target: 'esnext',
+  },
+  preview: {
+    port: 5002,
   },
 });
