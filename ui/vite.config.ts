@@ -10,7 +10,7 @@ export default defineConfig({
       name: 'ui',
       filename: 'remoteEntry.js',
       exposes: {
-        './Button': './src/components/Button',
+        './components': './src/components',
       },
       shared: ['react', 'react-dom'],
     }),
